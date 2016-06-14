@@ -3,7 +3,19 @@ package gomap
 import (
 	"strconv"
 	"errors"
+	"fmt"
 )
+
+func toString(val interface{}) string {
+	switch val.(type) {
+	//case []byte:
+	//	return fmt.Sprintf("%s", val)
+	case string, []byte:
+		return fmt.Sprintf("%s", val)
+	default:
+		return fmt.Sprintf("%v", val)
+	}
+}
 
 func stringToType(val string, valType interface{}) (interface{}, error) {
 	switch valType.(type) {

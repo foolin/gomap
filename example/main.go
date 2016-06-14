@@ -1,11 +1,12 @@
-"# gomap" 
+package main
 
-type StrMap map[string]interface{}
+import (
+	"github.com/foolin/gomap"
+	"log"
+	"encoding/json"
+)
 
-include get base type method.
-
-```go
-
+func main()  {
 	jstr := `
 	{"userId":123,"name":"Forin", "sex": "2", "createTime":"2016-06-14T14:54:18.6492677+08:00","ext":{"son":"Tigo","Age":2}}
 	`
@@ -18,5 +19,4 @@ include get base type method.
 
 	log.Printf("\n===================\n%#v\n ", user)
 	log.Printf("\n===================\nUserId：%v\n ", user.Int("userId", 0))
-
-```
+}
