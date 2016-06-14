@@ -89,3 +89,24 @@ func (this StrMap) Float64(key string, defaultValue float64) float64 {
 	}
 	return defaultValue
 }
+
+func (this StrMap) StrMap(key string) StrMap {
+	mValue, ok := this[key]
+	if !ok{
+		return nil
+	}
+	if v, ok := mValue.(StrMap); ok{
+		return v
+	}
+	if v, ok := mValue.(map[string]interface{}); ok{
+		return StrMap(v)
+	}
+	if v, ok := mValue.(map[interface{}]interface{}); ok{
+		mapValue := NewStrMap()
+		for key, value := range v{
+			mapValue[toString(key)] = value
+		}
+		return mapValue
+	}
+	return nil
+}

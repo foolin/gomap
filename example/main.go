@@ -18,5 +18,6 @@ func main()  {
 	}
 
 	log.Printf("\n===================\n%#v\n ", user)
+	log.Printf("\n===================\next son：%#v\n ", user.StrMap("ext").String("son"))
 	log.Printf("\n===================\nUserId：%v\n ", user.Int("userId", 0))
 }
