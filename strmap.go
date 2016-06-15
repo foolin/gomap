@@ -1,9 +1,5 @@
 package gomap
 
-import (
-	"fmt"
-)
-
 type StrMap map[string]interface{}
 
 func NewStrMap() StrMap {
@@ -23,7 +19,7 @@ func (this StrMap) Get(key string) interface{} {
 
 //get
 func (this StrMap) String(key string) string {
-	return fmt.Sprintf("%s", this[key])
+	return toString(this[key])
 }
 
 //get

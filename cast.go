@@ -10,7 +10,7 @@ func toString(val interface{}) string {
 	switch val.(type) {
 	//case []byte:
 	//	return fmt.Sprintf("%s", val)
-	case string, []byte:
+	case []byte:
 		return fmt.Sprintf("%s", val)
 	default:
 		return fmt.Sprintf("%v", val)
